@@ -1,4 +1,17 @@
-namespaceQueues:
-  - name: backend
-    roleAssignments:
-      - roleName: 'QueueSender'
+# TODO: Add queues
+#namespaceQueues:
+#  - name: rpa-mit-events
+#    roleAssignments:
+#      - roleName: 'QueueSender'
+#  - name: rpa-mit-invoice-importer
+#    roleAssignments:
+#      - roleName: 'QueueSender'
+#  - name: rpa-mit-invoice-notification
+#    roleAssignments:
+#      - roleName: 'QueueSender'
+storageAccounts:
+  - name: storage01 # TODO: Replace with the name of the storage account
+    blobContainers:  
+      - name: rpa-mit-invoices
+        roleAssignments:
+          - roleName: 'BlobDataContributor' 
