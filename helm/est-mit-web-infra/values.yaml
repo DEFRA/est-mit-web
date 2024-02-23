@@ -1,0 +1,4 @@
+namespaceQueues:
+  - name: backend
+    roleAssignments:
+      - roleName: 'QueueSender'

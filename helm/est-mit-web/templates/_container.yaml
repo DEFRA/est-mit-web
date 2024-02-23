@@ -1,7 +1,6 @@
-{{- define "est-mit-web.container" -}}
+{{- define "rpa-mit-web.container" -}}
+livenessProbe: {{ include "adp-helm-library.http-get-probe" (list . .Values.livenessProbe) | nindent 4}}
+readinessProbe: {{ include "adp-helm-library.http-get-probe" (list . .Values.readinessProbe) | nindent 4}}
 ports:
 - containerPort: {{ .Values.container.port }}
-volumeMounts:
-- mountPath: {{ .Values.volumeMounts.mountPath }}
-  name: {{ .Values.volumeMounts.name }}
 {{- end -}}

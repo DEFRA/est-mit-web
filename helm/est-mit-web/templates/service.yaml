@@ -1,3 +1,4 @@
-{{- include "ffc-helm-library.cluster-ip-service" (list . "est-mit-web.cluster-ip-service") -}}
-{{- define "est-mit-web.cluster-ip-service" -}}
+{{- include "adp-helm-library.cluster-ip-service" (list . "rpa-mit-web.cluster-ip-service") -}}
+{{- define "rpa-mit-web.cluster-ip-service" -}}
 {{- end -}}
+

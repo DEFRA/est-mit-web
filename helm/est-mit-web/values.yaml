@@ -1,51 +1,46 @@
 environment: development
-name: est-mit-web
-namespace: ffc-rpa
-workstream: ffc-rpa
-image: est-mit-web
+environmentCode:
+name: rpa-mit-web
+namespace: lap-mit
+workstream: lap-mit
+image: rpa-mit-web
 
-labels: {}
- 
-azureIdentity:
-  resourceID: dummy
-  clientID: dummy
+labels:
+  component: web
 
 appInsights:
   connectionString:
 
-containerConfigMap:
-  name: est-mit-web-config-map
-
-containerSecret:
-  name: est-mit-web-container-secret
-  type: Opaque
-
-deployment:
-  restartPolicy: Always
-  priorityClassName: low
-  replicas: 1
-  minReadySeconds: 5
-  imagePullSecret:
+deployment: {}
 
 container:
-  imagePullPolicy: IfNotPresent
-  requestMemory: 120Mi
-  requestCpu: 5m
-  limitMemory: 120Mi
-  limitCpu: 120m
+  requestMemory: 100Mi
+  requestCpu: 100m
+  limitMemory: 100Mi
+  limitCpu: 100m
   port: 3000
-  comPlusEnableDiagnostics: 0
-  InvoiceAPIBaseURI: value.replaced.from.app.config
-  ApprovalAPIBaseURI: value.replaced.from.app.config
-  ReferenceDataAPIBaseURI: value.replaced.from.app.config
+
+livenessProbe:
+  path: /healthz
+  port: 3000
+  initialDelaySeconds: 20
+  periodSeconds: 10
+  failureThreshold: 3
+  timeoutSeconds: 5
+
+readinessProbe:
+  path: /healthy
+  port: 3000
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  failureThreshold: 3
+  timeoutSeconds: 5
+
+service:
+  port: 80
+  type: ClusterIP
 
 ingress:
   class: nginx
-  endpoint: est-mit-web
-  server: value.replaced.from.app.config
-
-volumeMounts:
-  mountPath: /var/www/
-  name: core-app-dir
-
-aadPodIdentity: true
+  endpoint: rpa-mit-web
+  server: example.com

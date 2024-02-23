@@ -1,5 +1,0 @@
-{{- if .Values.pr }}
-{{- include "ffc-helm-library.role-binding" (list . "est-mit-web.role-binding") -}}
-{{- end }}
-{{- define "est-mit-web.role-binding" -}}
-{{- end -}}
