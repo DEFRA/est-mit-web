@@ -44,7 +44,7 @@ extends:
       appFrameworkType: "dotnet"    
       projectPath: "./EST.MIT.Web/EST.MIT.Web.csproj"
       testProjectPath: "./EST.MIT.Web.Test/EST.MIT.Web.Test.csproj"
-      manifestPath: "./obj/EST.MIT.Web/EST.MIT.Web.assets.json"
+      manifestPath: "./obj/EST.MIT.Web/project.assets.json"
       frameworkVersion: "6.x"
       imageRepoName: "rpa-mit-web"
     appTestConfig:
