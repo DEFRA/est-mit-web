@@ -1,11 +1,8 @@
-{{- include "ffc-helm-library.deployment" (list . "est-mit-web.deployment") -}}
-{{- define "est-mit-web.deployment" -}}
+{{- include "adp-helm-library.deployment" (list . "rpa-mit-web.deployment") -}}
+{{- define "rpa-mit-web.deployment" -}}
 spec:
   template:
     spec:
       containers:
-      - {{ include "ffc-helm-library.container" (list . "est-mit-web.container") }}
-      volumes:
-      - name: {{ .Values.volumeMounts.name }}
-        emptyDir: {}
+      - {{ include "adp-helm-library.container" (list . "rpa-mit-web.container") }}
 {{- end -}}

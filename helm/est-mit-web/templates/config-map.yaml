@@ -1,9 +1,1 @@
-{{- include "ffc-helm-library.container-config-map" (list . "est-mit-web.config-map") -}}
-{{- define "est-mit-web.config-map" -}}
-data:
-  COMPlus_EnableDiagnostics: {{ .Values.container.comPlusEnableDiagnostics | quote }}
-  PORT: {{ .Values.container.port | quote }}
-  InvoiceAPIBaseURI: {{ .Values.container.InvoiceAPIBaseURI | quote }}
-  ApprovalAPIBaseURI: {{ .Values.container.ApprovalAPIBaseURI | quote }}
-  ReferenceDataAPIBaseURI: {{ .Values.container.ReferenceDataAPIBaseURI | quote }}
-{{- end -}}
+{{- include "adp-helm-library.azure-config-service-map" . -}}
