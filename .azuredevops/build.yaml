@@ -46,7 +46,7 @@ extends:
       testProjectPath: "./EST.MIT.Web.Test/EST.MIT.Web.Test.csproj"
       manifestPath: "./EST.MIT.Web/obj/project.assets.json"
       frameworkVersion: "6.x"
-      imageRepoName: "est-mit-web"
+      imageRepoName: "rpa-mit-web"
     appTestConfig:
       testFilePath: "./docker-compose.test.yaml"
     appDeployConfig:
